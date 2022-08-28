@@ -16,3 +16,8 @@ print(type(name))
 # 三
 name = """你好"""
 print(type(name))
+
+# 引号嵌套可用\来进行转义
+
+name = '\"你好\"'
+print(name)
