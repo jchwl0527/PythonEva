@@ -1,3 +1,4 @@
+# 字符串格式化
 """
 %s  将内容转换成字符串，放入占位位置
 %d  将内容转换成整数，放入占位位置
@@ -27,3 +28,38 @@ m，控制宽度，要求是数字（很少使用），设置的宽度小于数�
 度，小数部分限制2位精度后，四舍五入为.35
 %.2f：表示不限制宽度，只设置小数点精度为2，如11.345设置%.2f后，结果是11.35
 """
+
+a1 = 12.34567
+a2 = ".%4d" % a1
+a3 = "%4.3f" % a1
+a4 = "%.2f" % a1
+print(a2)
+print(a3)
+print(a4)
+
+# 字符串格式化 - 快速写法(不限数据类型，不做精度控制)
+
+# 语法：f"内容{变量}"
+
+
+name1 = "Syr"
+age2 = 19.5
+abc = "hello"
+print(f"我是{name},我的年龄是{age2},{abc},world!")
+
+# 字符串格式化 - 表达式的格式化
+print("2 * 2 = %d" % (2 + 2))
+print(f"1 + 2 = {1 + 2}")
+print("字符串在Python中的类型是：%s" % type("字符串"))
+
+# 字符串格式化练习题
+
+name = "XlouS"  # 公司名
+stock_price = 19.99  # 当前股价
+stock_code = 62612  # 股票代码
+stock_price_daily_growth_factor = 1.2  # 股票每日增长系数，浮点数类型
+growth_days = 7  # 增长天数
+stock_prices = stock_price * stock_price_daily_growth_factor ** growth_days
+
+print(f"公司：{name}，股票代码：{stock_code}，当前股价：{stock_price}")
+print("每日增长系数是：%.1f，经过%d天的增长后，股价达到了：%.2f" % (stock_price_daily_growth_factor, growth_days, stock_prices))
