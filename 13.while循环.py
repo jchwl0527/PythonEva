@@ -51,3 +51,16 @@ while i <= 100:
     i += 1
 print(f"完事，共{i - 1}天")
 """
+
+# 练习 九九乘法表
+"""
+i = 1
+while i <= 9:
+
+    j = 1
+    while j <= i:
+        print(f"{j} * {i} = {j * i}\t", end='')
+        j += 1
+    i += 1
+    print()  # print空内容等于输出一个换行
+"""
