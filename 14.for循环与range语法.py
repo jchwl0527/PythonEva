@@ -65,6 +65,7 @@ print(f"1到{num}(不包含{num})范围内，有{i}个偶数。")
 
 # for   嵌套循环
 """
+num2 = 0  # 规范代码
 num1 = range(1, 11)
 for num2 in num1:
     print(f"第{num2}天")
@@ -76,6 +77,7 @@ print(f"第{num2}天，功德圆满")
 
 # 另一种
 """
+num1 = 0  # 规范代码
 num = range(1, 101)
 Hua = range(1, 11)
 for num1 in num:
