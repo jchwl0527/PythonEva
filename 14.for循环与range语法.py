@@ -86,3 +86,15 @@ for num1 in num:
         print(f"第{Hua1}朵")
 print(f"第{num1}天，功德圆满")
 """
+
+# 练习 for循环打印九九乘法表
+"""
+for i in range(1, 10):
+    # 外层控制行数
+    for j in range(1, i + 1):
+        # 内层控制每行内容
+        print(f"{j} * {i} = {j * i}\t", end='')
+
+    # 外层输出一个回车
+    print()
+"""

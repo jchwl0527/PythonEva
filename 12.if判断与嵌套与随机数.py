@@ -45,7 +45,7 @@ else:
 # 3.每次猜不中，会提示大了或小了
 """ 随机数代码，num变量储存随机数字
 import random
-num = random.randint(1,10)
+num = random.randint(1, 10)
 """
 
 """
