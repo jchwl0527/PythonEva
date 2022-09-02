@@ -42,10 +42,10 @@ i = 1
 while i <= 100:
     print(f"今天是第{i}天")
 
-    j = 1
-    while j <= 10:
-        print(f"今天有{j}个")
-        j += 1
+    i = 1
+    while i <= 10:
+        print(f"今天有{i}个")
+        i += 1
 
     print("可以")
     i += 1
@@ -57,10 +57,10 @@ print(f"完事，共{i - 1}天")
 i = 1
 while i <= 9:
 
-    j = 1
-    while j <= i:
-        print(f"{j} * {i} = {j * i}\t", end='')
-        j += 1
+    i = 1
+    while i <= i:
+        print(f"{i} * {i} = {i * i}\t", end='')
+        i += 1
     i += 1
     print()  # print空内容等于输出一个换行
 """

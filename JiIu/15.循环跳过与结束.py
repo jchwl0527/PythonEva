@@ -18,10 +18,10 @@ for i in range(0, 10):
 """
 for i in range(0, 10):
     print(i)
-    for j in range(1, 11):
-        print(j)
+    for i in range(1, 11):
+        print(i)
         break
-        print(j + 1)
+        print(i + 1)
     print(i + 1)
 """
 

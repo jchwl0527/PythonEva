@@ -91,9 +91,9 @@ print(f"第{num1}天，功德圆满")
 """
 for i in range(1, 10):
     # 外层控制行数
-    for j in range(1, i + 1):
+    for i in range(1, i + 1):
         # 内层控制每行内容
-        print(f"{j} * {i} = {j * i}\t", end='')
+        print(f"{i} * {i} = {i * i}\t", end='')
 
     # 外层输出一个回车
     print()
