@@ -43,3 +43,11 @@ print(a)
 name = "zxcvbnmlp"
 print(len(name))
 print(len("zxcvbnmlp"))
+
+# 获取当前日期时间
+from datetime import datetime
+
+now = datetime.now()
+print(str(now))
+
+print(repr(now))
