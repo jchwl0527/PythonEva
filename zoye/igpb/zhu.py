@@ -2,27 +2,41 @@
 import os
 
 import matplotlib.pyplot as plt
+import pandas as pd
+
+# 读取源文件
+df = pd.read_excel('成绩表.xlsx')
+
+# 删除不需要的内容
+
+# 输出文件并不生成索引行
+df.to_csv('csv1.csv', header=False, index=False)
 
 # 设置中文显示
 plt.rcParams['font.sans-serif'] = ['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
 
 # 读取文件
-nums = open("2.csv", mode='r', encoding='utf8', )
+num1 = open("csv1.csv", mode='r', encoding='utf8', )
+
 # 获取文件中所有行的列表
-num = nums.readlines()
+numa = num1.readlines()
+
+# 多个文件内容相加
+
 # 关闭文件
-nums.close()
+num1.close()
+
 # 检测图片储存目录是否存在
-os_path = './img2/'
+os_path = './img/'
 if os.path.exists(os_path):
     print("存在")
 else:
     print("不存在，正在创建")
     # 创建图片存放目录
-    os.mkdir('./img2/')
+    os.mkdir('./img/')
 # 循环读取数据进行处理
-for line in num:
+for line in numa:
     nums = line.split(",")
     name = nums[0]
     a = int(nums[1])
@@ -34,6 +48,6 @@ for line in num:
     plt.bar(x, y)
     plt.title(name)
     # 保存数据输出图片
-    plt.savefig('./img2/' + name + '.png')
-    # 展示图片
+    plt.savefig('./img/' + name + '.png')
+    # 展示图片，如不展示将出现莫名错误
     plt.show()

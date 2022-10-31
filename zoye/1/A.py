@@ -45,7 +45,6 @@ for line in numc:
     c = int(nums[3])
     x = ["平时成绩", "实验成绩", "卷面成绩"]
     y = [a, b, c]
-    # 生成并设置颜色为花色
     plt.bar(x, y)
     plt.title(name)
     # 保存数据输出图片

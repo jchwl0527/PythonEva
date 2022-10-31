@@ -41,21 +41,5 @@ with open('考勤表.csv', 'rt', encoding='utf-8') as file:
         s = nums[1] + nums[2] + nums[3] + nums[4] + nums[5] + nums[6] + nums[7] + nums[8] + nums[9] + nums[10]
         print(s)
 
-# num1 = 0
-
-
-# with open('考勤表.csv', 'r', encoding="utf-8") as f:
-#     num1 = csv.reader(f)
-#
-#     row1 = set(str(num1))
-#     for row2 in row1:
-#         print("%d" % (row1.count(row2)))
-
-# for row in num1:
-# print(row)
-# row1 = set(row)
-# for row2 in row1:
-#     print("%d" % (row1.count(row2)))
-
 # end = time.time()
 # print(end - start)  # 查看程序运行时间
