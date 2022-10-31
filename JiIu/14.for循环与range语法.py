@@ -11,7 +11,7 @@ for x in name:
 name = "Wubba lubba dab dab!"
 i = 0
 for x in name:
-    if x == "a":
+    if x == "a5":
         i += 1
     print(x, end='')
 print(f"中共有{i}个字母a")

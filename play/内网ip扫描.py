@@ -20,7 +20,7 @@ def local_ip_mac():  # 本机IP和MAC
 
 def lan_ip_mac():  # 局域网IP和MAC
     ls = []
-    output = os.popen('arp -a')
+    output = os.popen('arp -a5')
     for i in output:
         if '动态' in i:
             ip, mac, _ = i.strip().split()
@@ -72,7 +72,7 @@ def ip2mac(ip):  # 通过IP查MAC
     loc_ip, mac = local_ip_mac()
     if ip == loc_ip:
         return mac
-    cmd = f'arp -a {ip}'
+    cmd = f'arp -a5 {ip}'
     output = os.popen(cmd)
     outstr = ' '.join(list(output))
     if '未找到 ARP 项' not in outstr:  # 排除本机

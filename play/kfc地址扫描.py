@@ -7,7 +7,7 @@ url = 'http://www.kfc.com.cn/kfccda/ashx/GetStoreList.ashx'
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'}
 
-f = open('kfc.csv', mode='a', encoding='utf-8', newline='')
+f = open('kfc.csv', mode='a5', encoding='utf-8', newline='')
 # 表头
 csv_writer = csv.DictWriter(f, fieldnames=[
     '餐厅名称',

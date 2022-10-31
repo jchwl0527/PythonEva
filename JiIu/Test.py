@@ -12,10 +12,10 @@ print("World")
 print("Hello\tworld")
 print("Hi\t\tworld")
 
-a = 24
-print(bin(a))   # 将整数x转换为二进制字符串﹐例如bin(24)结果是'0b11000'
-print(oct(a))   # 将整数x转化为八进制字符串﹐例如oct(24)结果是'0o30
-print(hex(a))   # 将整数x转换为十六进制字符串,例如hex(24)结果是'0x18'
+a5 = 24
+print(bin(a5))   # 将整数x转换为二进制字符串﹐例如bin(24)结果是'0b11000'
+print(oct(a5))   # 将整数x转化为八进制字符串﹐例如oct(24)结果是'0o30
+print(hex(a5))   # 将整数x转换为十六进制字符串,例如hex(24)结果是'0x18'
 
 i = complex(3, 5)   # 创建一个复数
 print(i)
@@ -34,9 +34,9 @@ print(chr(65))  # 返回整数对应的ASCII字符
 i = int(65)
 print(chr(i))  # 返回整数对应的ASCII字符
 
-a = 123
-del a  # 删除变量
-print(a)
+a5 = 123
+del a5  # 删除变量
+print(a5)
 """
 
 # 计算字符长度
