@@ -1,15 +1,14 @@
+# 导包
 import os
 
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# 考勤表
+# 替换考勤表数据内容
 df = pd.read_excel('考勤表.xlsx', header=None)
 df.to_csv('考勤表.csv', header=None, index=False)
-
 with open("考勤表.csv", "rt", encoding='utf-8') as file:
     x = file.read()
-
 with open("考勤表.csv", "wt", encoding='utf-8') as file:
     x = x.replace("V", "10")
     file.write(x)
@@ -19,8 +18,10 @@ with open("考勤表.csv", "wt", encoding='utf-8') as file:
 with open("考勤表.csv", "wt", encoding='utf-8') as file:
     x = x.replace("O", "-5")
     file.write(x)
+
 file.close()
 m = []
+# 计算考勤表分数
 with open('考勤表.csv', 'rt', encoding='utf-8') as file:
     for line in file:
         nums = line.split(",")
@@ -37,11 +38,14 @@ with open('考勤表.csv', 'rt', encoding='utf-8') as file:
         nums[10] = int(nums[10])
         s = nums[1] + nums[2] + nums[3] + nums[4] + nums[5] + nums[6] + nums[7] + nums[8] + nums[9] + nums[10]
 
-# 成绩表
+# 读取成绩表源文件
 df2 = pd.read_excel('成绩表.xlsx', header=None)
+# 清洗数据
+df2 = df2.drop([0, 1])
+# 输出CSV文件
 df2.to_csv('成绩表.csv', header=None, index=False)
-
-results = open("成绩表.csv", mode='r', encoding='utf8', )
+# 读取
+results = open("成绩表.csv", mode='r', encoding='utf8')
 result = results.readlines()
 results.close()
 n = []
@@ -54,24 +58,24 @@ for line in result:
     c = int(nums[3]) * 0.7
     d = a + b + c + s * 0.1
     n.append(d)
-
-you = 0
-liang = 0
-zhong = 0
-cha = 0
+# 设置等级
+excellent = 0
+good = 0
+secondary = 0
+garbage = 0
 
 for lens in n:
     if 100 > int(lens) >= 90:
-        you = you + 1
+        excellent = excellent + 1
     elif 90 > int(lens) >= 75:
-        liang = liang + 1
+        good = good + 1
     elif 75 > int(lens) >= 60:
-        zhong = zhong + 1
+        secondary = secondary + 1
     else:
-        cha = cha + 1
+        garbage = garbage + 1
 
-t = you + liang + zhong + cha
-zong = [you / t, liang / t, zhong / t, cha / t]
+t = excellent + good + secondary + garbage
+comprehensive = [excellent / t, good / t, secondary / t, garbage / t]
 
 plt.rcParams['font.sans-serif'] = ['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
@@ -79,15 +83,15 @@ plt.rcParams['axes.unicode_minus'] = False
 labels = ['优', '良', '中', '差']
 
 # 检测图片储存目录是否存在
-os_path = './bing2/'
+os_path = './饼状图/'
 if os.path.exists(os_path):
     print("存在")
 else:
     print("不存在，正在创建")
     # 创建图片存放目录
-    os.mkdir('./bing2/')
+    os.mkdir('./饼状图/')
 
-plt.pie(zong, labels=labels, autopct='%0.2f%%', colors=["#d5695d", "#5d8ca8", "#65a479", "#a564c9"])
+plt.pie(comprehensive, labels=labels, autopct='%0.2f%%', colors=["#d5695d", "#5d8ca8", "#65a479", "#a564c9"])
 plt.title("学生成绩比例")
-plt.savefig('./bing2/1.png')
+plt.savefig('./饼状图/学生成绩比例.png')
 plt.show()

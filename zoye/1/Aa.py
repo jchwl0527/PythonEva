@@ -23,26 +23,25 @@ with open('csv1.csv', mode="r", encoding="utf-8") as f:
         j = open("new_data.csv", mode="a+", encoding="utf-8", newline="")
         j.writelines(str(data_list))
 
-# with open("new_data.csv", mode="a+", encoding="utf-8", newline="") as j:
-#     writer = csv.writer(j)
-#     writer.writerow(header_list)
-#     writer.writerows(data_list)
+with open("new_data.csv", mode="a+", encoding="utf-8", newline="") as j:
+    writer = csv.writer(j)
+    writer.writerow(header_list)
+    writer.writerows(data_list)
 
-# print("{}  {}: {}={}, {}={}, {}={}".format(header[0], row[0],
-#                                            header[1], row[1],
-#                                            header[2], row[2],
-#                                            header[3], row[3]))
-#
+print("{}  {}: {}={}, {}={}, {}={}".format(header[0], row[0],
+                                           header[1], row[1],
+                                           header[2], row[2],
+                                           header[3], row[3]))
 
-# # 生成图表
-# a = int(row[1])
-# b = int(row[2])
-# c = int(row[3])
-# d = str(header[1])
-# e = str(header[2])
-# f = str(header[3])
-# x = [d, e, f]
-# y = [a, b, c]
-# plt.bar(x, y)
-# plt.title(row[0])
-# plt.show()
+# 生成图表
+a = int(row[1])
+b = int(row[2])
+c = int(row[3])
+d = str(header[1])
+e = str(header[2])
+f = str(header[3])
+x = [d, e, f]
+y = [a, b, c]
+plt.bar(x, y)
+plt.title(row[0])
+plt.show()
