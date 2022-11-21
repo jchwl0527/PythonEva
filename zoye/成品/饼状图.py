@@ -41,7 +41,7 @@ with open('考勤表.csv', 'rt', encoding='utf-8') as file:
 # 读取成绩表源文件
 df2 = pd.read_excel('成绩表.xlsx', header=None)
 # 清洗数据
-df2 = df2.drop([0, 1])
+df2 = df2.drop([0])
 # 输出CSV文件
 df2.to_csv('成绩表.csv', header=None, index=False)
 # 读取
@@ -58,7 +58,7 @@ for line in result:
     c = int(nums[3]) * 0.7
     d = a + b + c + s * 0.1
     n.append(d)
-# 设置等级
+# 设置成绩等级
 excellent = 0
 good = 0
 secondary = 0

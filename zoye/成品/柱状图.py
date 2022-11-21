@@ -3,6 +3,7 @@
 # 导包
 import os
 
+import openpyxl
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -31,6 +32,7 @@ numc = numa  # + numb
 num1.close()
 # num2.close()
 # 检测图表输出目录是否存在
+# 请输入XXX要保存的位置
 os_path = './柱状图/'
 if os.path.exists(os_path):
     print("存在")
